@@ -5,19 +5,19 @@ entry_points:
   main:
     parameters:
 
-      input_artifact:
-        description: Ininital artifact to be cleaned
+      in_art:
+        description: Initial artifact to be cleaned
         type: string
 
-      output_artifact:
+      out_art:
         description: Output artifact for cleaned data
         type: string
 
-      output_type:
+      out_type:
         description: Type of the output dataset
         type: string
 
-      output_description:
+      out_desc:
         description: Description of the output dataset
         type: string
 
@@ -31,4 +31,4 @@ entry_points:
 
 
     command: >-
-        python run.py  --input_artifact {input_artifact}  --output_artifact {output_artifact}  --output_type {output_type}  --output_description {output_description}  --min_price {min_price}  --max_price {max_price} 
+        python run.py  --in_art {in_art}  --out_art {out_art}  --out_type {out_type}  --out_desc {out_desc}  --min_price {min_price}  --max_price {max_price}
