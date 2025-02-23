@@ -30,8 +30,8 @@ def go(args):
     trainval, test = train_test_split(
         df,
         test_size=args.test_size,
-        random_state=args.random_seed,
-        stratify=df[args.stratify_by] if args.stratify_by != 'none' else None,
+        random_state=args.ran_seed,
+        stratify=df[args.strat_by] if args.strat_by != 'none' else None,
     )
 
     # Save to output files
@@ -60,11 +60,11 @@ if __name__ == "__main__":
     )
 
     parser.add_argument(
-        "--random_seed", type=int, help="Seed for random number generator", default=42, required=False
+        "--ran_seed", type=int, help="Seed for random number generator", default=42, required=False
     )
 
     parser.add_argument(
-        "--stratify_by", type=str, help="Column to use for stratification", default='none', required=False
+        "--strat_by", type=str, help="Column to use for stratification", default='none', required=False
     )
 
     args = parser.parse_args()
