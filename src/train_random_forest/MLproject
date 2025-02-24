@@ -5,7 +5,7 @@ entry_points:
   main:
     parameters:
 
-      trainval_artifact:
+      trainval_art:
         description: Train dataset
         type: string
 
@@ -13,12 +13,12 @@ entry_points:
         description: Size of the validation split. Fraction of the dataset, or number of items
         type: string
 
-      random_seed:
+      ran_seed:
         description: Seed for the random number generator. Use this for reproducibility
         type: string
         default: 42
 
-      stratify_by:
+      strat_by:
         description: Column to use for stratification (if any)
         type: string
         default: 'none'
@@ -28,19 +28,19 @@ entry_points:
                      be passed to the scikit-learn constructor for RandomForestRegressor.
         type: string
 
-      max_tfidf_features:
+      max_tfidf_feat:
         description: Maximum number of words to consider for the TFIDF
         type: string
 
-      output_artifact:
+      out_art:
         description: Name for the output artifact
         type: string
 
     command: >-
-      python run.py --trainval_artifact {trainval_artifact} \
+      python run.py --trainval_art {trainval_art} \
                     --val_size {val_size} \
-                    --random_seed {random_seed} \
-                    --stratify_by {stratify_by} \
+                    --ran_seed {ran_seed} \
+                    --strat_by {strat_by} \
                     --rf_config {rf_config} \
-                    --max_tfidf_features {max_tfidf_features} \
-                    --output_artifact {output_artifact}
+                    --max_tfidf_feat {max_tfidf_feat} \
+                    --out_art {out_art}
